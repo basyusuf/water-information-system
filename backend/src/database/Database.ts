@@ -33,6 +33,7 @@ export class Database {
                 throw new Error('Database connection error. Please check logs');
             }
         }
+        console.info("Database connection was successfull!");
         return this.connection;
     }
 }
