@@ -5,6 +5,7 @@
     "target": "ES2017",
     "noImplicitAny": true,
     "preserveConstEnums": true,
+    "resolveJsonModule": true,
     "outDir": "./build",
     "sourceMap": true,
     "emitDecoratorMetadata": true,

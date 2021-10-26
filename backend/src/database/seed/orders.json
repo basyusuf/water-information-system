@@ -1,0 +1,88 @@
+[
+    {
+        "subscriptionId": "abc123",
+        "deliveryDate": "2017-05-02 00:13",
+        "paymentMethod": "BKM",
+        "products": [
+            {
+                "product": "19 lt damanaca",
+                "quantity": 1
+            }
+        ],
+        "totalAmount": 10.00,
+        "status": "NEW"
+    },
+    {
+        "subscriptionId": "abc123",
+        "deliveryDate": "2017-04-23 20:05",
+        "paymentMethod": "MASTERPASS",
+        "products": [
+            {
+                "product": "19 lt damanaca",
+                "quantity": 1
+            },
+            {
+                "product": "10 lt pet",
+                "quantity": 2
+            }
+        ],
+        "totalAmount": 24.00,
+        "status": "CONFIRMED"
+    },
+    {
+        "subscriptionId": "abc123",
+        "deliveryDate": "2017-03-31 16:35",
+        "paymentMethod": "PAYATDOOR",
+        "products": [
+            {
+                "product": "19 lt damanaca",
+                "quantity": 2
+            }
+        ],
+        "totalAmount": 12.00,
+        "status": "CANCELED"
+    },
+    {
+        "subscriptionId": "abc125",
+        "deliveryDate": "2017-03-29 11:19",
+        "paymentMethod": "PAYATDOOR",
+        "products": [
+            {
+                "product": "19 lt damanaca",
+                "quantity": 3
+            }
+        ],
+        "totalAmount": 36.00,
+        "status": "COMPLETED"
+    },
+    {
+        "subscriptionId": "abc125",
+        "deliveryDate": "2017-03-23 17:59",
+        "paymentMethod": "BKM",
+        "products": [
+            {
+                "product": "5 lt pet",
+                "quantity": 2
+            }
+        ],
+        "totalAmount": 15.00,
+        "status": "CONFIRMED"
+    },
+    {
+        "subscriptionId": "abc126",
+        "deliveryDate": "2017-03-09 19:02",
+        "paymentMethod": "MASTERPASS",
+        "products": [
+            {
+                "product": "19 lt damanaca",
+                "quantity": 1
+            },
+            {
+                "product": "5 lt pet",
+                "quantity": 3
+            }
+        ],
+        "totalAmount": 32.50,
+        "status": "CANCELED"
+    }
+]

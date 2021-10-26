@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "tsc && node build/app.js",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts"
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/app.ts",
+    "seed": "tsc && node build/database/seed/seed.js"
   },
   "author": "Yusuf Baş",
   "devDependencies": {

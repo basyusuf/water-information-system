@@ -1,0 +1,46 @@
+[
+    {
+        "subscriptionId": "abc123",
+        "fullname": "Utku",
+        "address": "sair nefi sokak",
+        "locationName": "caferaga",
+        "subCityName": "kadiköy",
+        "cityName": "istanbul",
+        "brand": "hayat",
+        "phoneNumber": "5332858530",
+        "distributorNumber": "2161000000"
+    },
+    {
+        "subscriptionId": "abc124",
+        "fullname": "Utku",
+        "address": "sair nefi sokak",
+        "locationName": "caferaga",
+        "subCityName": "kadiköy",
+        "cityName": "istanbul",
+        "brand": "sirma",
+        "phoneNumber": "5332858530",
+        "distributorNumber": "2161000004"
+    },
+    {
+        "subscriptionId": "abc125",
+        "fullname": "Ozan",
+        "address": "bahariye sokak",
+        "locationName": "caddebostan",
+        "subCityName": "kadiköy",
+        "cityName": "istanbul",
+        "brand": "erikli",
+        "phoneNumber": "5331533630",
+        "distributorNumber": "2161000001"
+    },
+    {
+        "subscriptionId": "abc126",
+        "fullname": "Ergin",
+        "address": "moda caddesi",
+        "locationName": "göztepe",
+        "subCityName": "kadiköy",
+        "cityName": "istanbul",
+        "brand": "sirma",
+        "phoneNumber": "5332858530",
+        "distributorNumber": "2161000002"
+    }
+]
