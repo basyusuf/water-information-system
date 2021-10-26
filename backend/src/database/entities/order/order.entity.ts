@@ -9,6 +9,9 @@ export class OrderEntity {
     @PrimaryGeneratedColumn()
     orderId: number;
 
+    @Column({ name: 'subscriptionId' })
+    subscriptionId: string;
+
     @ManyToOne(() => SubscriptionEntity, subs => subs.subscriptionId, {
         onDelete: "CASCADE"
     })
