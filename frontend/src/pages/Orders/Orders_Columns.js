@@ -25,11 +25,11 @@ const columns = [
         name: 'Status',
         selector: row => {
             let color = "grey";
-            if (row.status == "CANCELED") {
+            if (row.status === "CANCELED") {
                 color = "red"
-            } else if (row.status == "NEW") {
+            } else if (row.status === "NEW") {
                 color = "green"
-            } else if (row.status = "CONFIRMED") {
+            } else if (row.status === "CONFIRMED") {
                 color = "yellow"
             }
             return (<Label color={color}>{row.status}</Label>)

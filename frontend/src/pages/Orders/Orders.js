@@ -1,4 +1,4 @@
-import { Grid, Container, Form, Button, Header, Image, Modal } from 'semantic-ui-react';
+import { Grid, Container, Form, Button, Image, Modal } from 'semantic-ui-react';
 import DataTable from 'react-data-table-component'
 import { useState } from 'react';
 import { getSubscriptionOrders } from '../../services/orders';
