@@ -10,16 +10,15 @@ const getSubscriptionOrders = async (req: Request, res: Response, next: NextFunc
         let checkResult = await orderRepo.getOrderBySubscriptionId(req.params.subscriptionId);
         if (checkResult.status) {
             if (Array.isArray(checkResult.data) && checkResult.data.length > 0) {
-                res.json(checkResult.data).status(200);
+                res.status(200).json(checkResult.data);
             } else {
-                res.json(new ErrorResponse("Belirtilen telefona ait kayıt bulunamamıştır.").get()).status(403);
+                res.status(403).json(new ErrorResponse("Belirtilen telefona ait kayıt bulunamamıştır.").get())
             }
         } else {
-            res.json(new ErrorResponse("Sunucu hatası. Lütfen tekrar deneyin.").get()).status(500);
+            res.status(500).json(new ErrorResponse("Sunucu hatası. Lütfen tekrar deneyin.").get());
         }
     } catch (err) {
-        console.info(err);
-        res.json(new ErrorResponse("Sunucu hatası. Lütfen tekrar deneyin.").get()).status(500);
+        res.status(500).json(new ErrorResponse("Sunucu hatası. Lütfen tekrar deneyin.").get());
     }
 };
 export default {
