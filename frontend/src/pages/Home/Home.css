@@ -1,0 +1,10 @@
+#homeDiv {
+    margin-top: 3em;
+    text-align: center;
+}
+#mainImg {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 1.5em;
+    user-select: none;
+}

@@ -1,0 +1,9 @@
+.modalTable {
+    width: 100%;
+}
+.modalTable td {
+    text-align: right;
+}
+.modalDescription {
+    width: 100%;
+}

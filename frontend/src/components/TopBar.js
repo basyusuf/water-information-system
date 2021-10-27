@@ -5,8 +5,8 @@ import {
 } from 'semantic-ui-react'
 function TopBar(props) {
     let history = useHistory();
-    return (<div>
-        <Menu fixed='top' inverted>
+    return (<div style={{ minHeight: '100vh' }}>
+        <Menu >
             <Container>
                 <Menu.Item header as='a' onClick={() => history.push("/")}>
                     Water Delivery System
@@ -15,10 +15,7 @@ function TopBar(props) {
                 <Menu.Item as='a' onClick={() => history.push("/orders")}>Order</Menu.Item>
             </Container>
         </Menu>
-
-        <Container style={{ marginTop: '3em' }}>
-            {props.children}
-        </Container>
+        {props.children}
     </div>)
 }
 
