@@ -2,11 +2,12 @@ import express from 'express';
 import path from 'path';
 import logger from 'morgan';
 import "reflect-metadata";
+import config from './config';
 
 import routes from './routes/index';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = config.SERVER_PORT || 3001;
 
 app.use(logger('dev'));
 app.use(express.json());
