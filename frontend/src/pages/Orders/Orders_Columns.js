@@ -20,6 +20,7 @@ const columns = [
     {
         name: 'Total Amount',
         selector: row => row.totalAmount,
+        sortable: true,
     },
     {
         name: 'Status',

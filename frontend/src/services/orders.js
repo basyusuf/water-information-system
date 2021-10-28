@@ -1,15 +1,16 @@
 import axios from 'axios';
+import config from './service_config';
+
 export const getSubscriptionOrders = async (subscriptionId) => {
     if (!subscriptionId) {
         throw new Error('Subscription Id not be null or undefined!')
     }
     let requestConfig = {
-        url: `http://localhost:3001/getSubscriptionOrders/${subscriptionId}`,
+        url: `${config.BaseURL}/getSubscriptionOrders/${subscriptionId}`,
         method: 'POST',
     }
     try {
         let result = await axios(requestConfig);
-        console.info("Result:", result);
         return {
             status: true,
             data: result.data,

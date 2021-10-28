@@ -11,7 +11,9 @@ function Orders() {
     let [data, setData] = useState([]);
     let [isLoading, setIsLoading] = useState(false);
     let [subscriptionId, setSubscriptionId] = useState("");
-    const [modalStatus, setModalStatus] = useState(false)
+    let [modalStatus, setModalStatus] = useState(false)
+    let [modalData, setModalData] = useState({});
+
     const searchOrders = async () => {
         if (!isLoading && subscriptionId) {
             setIsLoading(true);
@@ -38,9 +40,14 @@ function Orders() {
             setIsLoading(false);
         }
     }
+    const viewModal = (row) => {
+        setModalData(row);
+        setModalStatus(true);
+    }
 
     return (<div>
         <Container style={{ marginTop: '2em' }}>
+            {ProductModal(modalData, setModalStatus, modalStatus)}
             <Grid reversed='mobile vertically'>
                 <Grid.Row>
                     <Grid.Column computer={4} tablet={16} mobile={16}>
@@ -65,19 +72,20 @@ function Orders() {
                         <DataTable
                             responsive
                             fixedHeader
+                            title="Order list"
+                            persistTableHead
                             fixedHeaderScrollHeight="300px"
-                            columns={[
-                                ...columns,
-                                {
-                                    name: 'Products',
-                                    selector: row => ProductModal(row, setModalStatus, modalStatus),
-                                }
-                            ]}
+                            columns={columns}
                             data={data}
                             highlightOnHover
+                            pointerOnHover
                             progressPending={isLoading}
-                            onRowClicked={row => console.log(row)}
+                            pagination
+                            onRowClicked={row => viewModal(row)}
                         />
+                        <div style={{ textAlign: 'right', color: 'grey' }}>
+                            {data && data.length > 0 && "Click row for products detail"}
+                        </div>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
@@ -85,46 +93,50 @@ function Orders() {
     </div>);
 }
 
-const ProductModal = (row, setOpen, open) => {
-    return (<Modal
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}
-        open={open}
-        trigger={<Button icon="eye" color="blue" />}
-    >
-        <Modal.Header>Product list</Modal.Header>
-        <Modal.Content image>
-            <Image size='medium' src={bottles} wrapped />
-            <Modal.Description className="modalDescription">
-                <div>
-                    <table className="modalTable">
-                        <tr>
-                            <th>Name</th>
-                            <th>Quantity</th>
-                        </tr>
-                        {row.products && row.products.map(item => {
-                            return (<tr>
-                                <td>{item.product}</td>
-                                <td>{item.quantity}</td>
-                            </tr>)
-                        })}
-                    </table>
-                </div>
-                <div style={{ textAlign: 'right' }}>
-                    Total: <strong>{row.totalAmount} TL</strong>
-                </div>
-            </Modal.Description>
-        </Modal.Content>
-        <Modal.Actions>
-            <Button
-                content="Close"
-                color="red"
-                labelPosition='right'
-                icon='close'
-                onClick={() => setOpen(false)}
-            />
-        </Modal.Actions>
-    </Modal>)
+let ProductModal = (row, setOpen, open) => {
+    if (row) {
+        return (<Modal
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
+            open={open}
+        >
+            <Modal.Header>Product list</Modal.Header>
+            <Modal.Content image>
+                <Image size='medium' src={bottles} wrapped />
+                <Modal.Description className="modalDescription">
+                    <div>
+                        <table className="modalTable">
+                            <tr>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                            </tr>
+                            {row.products && row.products.map((item, index) => {
+                                return (<tr key={index.toString()}>
+                                    <td>{item.product}</td>
+                                    <td>{item.quantity}</td>
+                                </tr>)
+                            })}
+                        </table>
+                    </div>
+                    <div style={{ textAlign: 'right' }}>
+                        Total: <strong>{row.totalAmount} TL</strong>
+                    </div>
+                </Modal.Description>
+            </Modal.Content>
+            <Modal.Actions>
+                <Button
+                    content="Close"
+                    color="red"
+                    labelPosition='right'
+                    icon='close'
+                    onClick={() => setOpen(false)}
+                />
+            </Modal.Actions>
+        </Modal>)
+    } else {
+        return "";
+    }
+
 }
 
 export default Orders;

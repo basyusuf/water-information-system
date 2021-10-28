@@ -61,9 +61,12 @@ function Customer() {
                         <DataTable
                             responsive
                             fixedHeader
+                            title="Customer list"
+                            persistTableHead
                             fixedHeaderScrollHeight="300px"
                             columns={columns}
                             data={data}
+                            pagination
                             highlightOnHover
                             progressPending={isLoading}
                         />
